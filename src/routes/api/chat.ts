@@ -9,7 +9,7 @@ export const Route = createFileRoute("/api/chat")({
     handlers: {
       POST: async ({ request }) => {
         const { messages, language } = (await request.json()) as { messages: UIMessage[]; language?: string };
-        const key = process.env.LOVABLE_API_KEY;
+        const key = process.env["LOVABLE_API_KEY"];
         if (!key) return new Response("AI not configured", { status: 500 });
         const openai = createOpenAI({
           baseURL: "https://ai.gateway.lovable.dev/v1",
