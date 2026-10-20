@@ -132,6 +132,31 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
+:root {
+  --radius: 0.75rem;
+  --background: oklch(0.18 0.05 260);
+  --foreground: oklch(0.96 0.01 250);
+  --card: oklch(0.23 0.06 260);
+  --card-foreground: oklch(0.96 0.01 250);
+  --popover: oklch(0.23 0.06 260);
+  --popover-foreground: oklch(0.96 0.01 250);
+  --primary: oklch(0.74 0.17 55);
+  --primary-foreground: oklch(0.18 0.05 260);
+  --secondary: oklch(0.28 0.06 260);
+  --secondary-foreground: oklch(0.96 0.01 250);
+  --muted: oklch(0.28 0.06 260);
+  --muted-foreground: oklch(0.75 0.03 255);
+  --border: oklch(0.34 0.06 260);
+  --input: oklch(0.36 0.06 260);
+  --ring: oklch(0.74 0.17 55);
+}
+
+@theme inline {
+  --font-display: "Outfit", sans-serif;
+  --font-sans: "Figtree", sans-serif;
+  --shadow-glow: 0 20px 60px -20px color-mix(in oklab, var(--primary) 35%, transparent);
+}
+
 @layer base {
   * {
     border-color: var(--color-border);
@@ -139,6 +164,12 @@
 
   body {
     background-color: var(--color-background);
+    background-image: radial-gradient(ellipse at top, color-mix(in oklab, var(--primary) 12%, transparent), transparent 60%);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
   }
 }
+
+.prose-chat p { margin: 0.5rem 0; }
+.prose-chat ol, .prose-chat ul { margin: 0.5rem 0; padding-left: 1.25rem; list-style: revert; }
+.prose-chat strong { color: var(--primary); }
