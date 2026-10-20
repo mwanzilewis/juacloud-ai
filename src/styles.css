@@ -173,3 +173,10 @@
 .prose-chat p { margin: 0.5rem 0; }
 .prose-chat ol, .prose-chat ul { margin: 0.5rem 0; padding-left: 1.25rem; list-style: revert; }
 .prose-chat strong { color: var(--primary); }
+
+:root {
+  --success: oklch(0.72 0.17 150);
+}
+@theme inline {
+  --color-success: var(--success);
+}
