@@ -31,6 +31,9 @@ export const Route = createFileRoute("/api/quiz")({
             abortSignal: request.signal,
             providerOptions: { openai: { forceReasoning: true, reasoningEffort: "low", store: false } },
           });
+          for await (const part of result.fullStream) {
+            if (part.type === "error") throw part.error;
+          }
           return Response.json(await result.output);
         } catch (e) {
           const status = (e as { statusCode?: number })?.statusCode;
