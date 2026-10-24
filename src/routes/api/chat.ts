@@ -26,7 +26,14 @@ export const Route = createFileRoute("/api/chat")({
             openai: { forceReasoning: true, reasoningEffort: "low", store: false, include: ["reasoning.encrypted_content"] },
           },
         });
-        return result.toUIMessageStreamResponse({ originalMessages: messages });
+        return result.toUIMessageStreamResponse({
+          originalMessages: messages,
+          onError: (e) => {
+            const status = (e as { statusCode?: number })?.statusCode;
+            if (status === 402) return "JuaCloud has run out of AI credits. Top up your Lovable credits to keep asking questions.";
+            return e instanceof Error && e.message ? e.message : "Something went wrong. Please try again.";
+          },
+        });
       },
     },
   },

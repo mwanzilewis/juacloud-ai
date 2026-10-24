@@ -1,53 +1,26 @@
-# JuaCloud AI
+# Jua Cloud Study Buddy
 
-_Your AI Tutor for Microsoft AZ-900, on WhatsApp._
+Build a mobile-first web app called JuaCloud AI, an unofficial AZ-900 study buddy for Kenya. Page layout: Top header with logo "JuaCloud AI" and 3 buttons for Language: English, Swahili, Sheng. Hero section with headline "Stop reading boring notes. Ask JuaCloud." and subtext "AZ-900 explained with Kenyan examples - M-Pesa, matatu, shamba, market." Below hero: Main chat interface with input box "Ask: What is a Virtual Network?" and Ask button, and topic chips: Cloud Concepts, Core Azure Services, Security, Pricing/SLA. Under each AI answer, show a "Quiz Me" button. Footer: "Unofficial tool. Not affiliated with Microsoft. Based on public AZ-900 skills outline." Use modern dark blue and orange theme, clean and friendly, fully responsive for phone. For the AI logic, use this system prompt: You are JuaCloud AI, an unofficial AZ-900 study buddy for 1MillionDevs learners in Kenya, you explain every concept like you are talking to a beginner in Migori using a real Kenyan example every time such as M-Pesa, matatu, shamba or market, you base all answers only on the public AZ-900 skills outline and never copy real Microsoft exam questions, you always structure your answer as 1) simple 1-sentence definition 2) Kenyan analogy 3) real Azure use case, you end every explanation with "Want me to quiz you on this? Yes/No" and if the user asks in Swahili or Sheng you reply in Swahili or Sheng.
 
-JuaCloud makes cloud certification affordable and accessible for youth in Western Kenya through multilingual AI tutoring in English, Swahili, and Sheng.
+This project was built with [Lovable](https://lovable.dev).
 
-### Problem
+**Live app**: https://jua-cloud-study-buddy.lovable.app
 
-- AZ-900 bootcamps cost Ksh 10,000+ and are only in Nairobi
-- Learning resources are in complex English, not relatable to Kenyan students
-- Students in Kakamega, MMUST, and rural colleges have no affordable path to global cloud jobs
-- 78% of interested students drop out due to cost and language barrier
+## Build with Lovable
 
-### Solution
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/df45e0e0-8868-46bf-81bf-91dff70c9c45).
 
-JuaCloud AI is a WhatsApp-based AI tutor built specifically for the Microsoft AZ-900 exam.
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
-- Chat in English, Swahili, or Sheng
-- Learn with Kenyan analogies: matatu, shamba, M-Pesa, and cloud
-- Get instant explanations + auto quizzes to track readiness
-- No app to install, works on any phone with WhatsApp
+## Development
 
-### Key Features
+Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
 
-- Multilingual AI Tutor: Understands English, Swahili, Sheng
-- AZ-900 Focused Content Library: Cloud concepts, services, pricing, governance
-- Smart Quizzes: Personalized revision based on weak areas
-- Progress Dashboard: For learners and for schools
-- Low Data Mode: Built for WhatsApp, not heavy web apps
-
-### How It Works
-
-1. Student joins via WhatsApp Group or DM
-2. Asks question: "Explain Azure pricing"
-3. JuaCloud explains in simple language with local example
-4. Student takes 3-question quiz
-5. System updates progress and recommends next topic
-
-### Tech Stack
-
-- Frontend: WhatsApp API + Mobile Web Dashboard
-- Backend: Python, FastAPI
-- AI: LLM fine-tuned with retrieval on AZ-900 official syllabus
-- Database: PostgreSQL for user progress and quiz tracking
-- Hosting: Cloud VPS + WhatsApp Business API
-
-### Project Structure
-
-/juacloud
-/backend - API and AI logic
-/frontend - Student and teacher dashboard
-/content - AZ-900 curriculum and Kenyan analogy dataset
-/docs - Pitch deck and user guide
+```sh
+git clone <this-repository-url>
+cd <repository-name>
+npm i
+npm run dev
+```
