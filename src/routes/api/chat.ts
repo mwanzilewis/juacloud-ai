@@ -31,7 +31,7 @@ export const Route = createFileRoute("/api/chat")({
           onError: (e) => {
             const status = (e as { statusCode?: number })?.statusCode;
             if (status === 402) return "JuaCloud has run out of AI credits. Top up your Lovable credits to keep asking questions.";
-            return undefined;
+            return e instanceof Error && e.message ? e.message : "Something went wrong. Please try again.";
           },
         });
       },
