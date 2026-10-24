@@ -33,6 +33,8 @@ export const Route = createFileRoute("/api/quiz")({
           });
           return Response.json(await result.output);
         } catch (e) {
+          const status = (e as { statusCode?: number })?.statusCode;
+          if (status === 402) return new Response("JuaCloud has run out of AI credits. Top up your Lovable credits to keep quizzing.", { status: 402 });
           return new Response(e instanceof Error ? e.message : "Quiz failed", { status: 502 });
         }
       },
